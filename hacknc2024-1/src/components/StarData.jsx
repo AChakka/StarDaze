@@ -104,6 +104,30 @@ export const sampleStarData = [
     { id: "per7", name: "Eta Per", ra: 42.674, dec: 55.895, magnitude: 3.76, color: '#FFFFFF', constellation: 'Perseus' },
     { id: "per8", name: "Iota Per", ra: 54.684, dec: 49.613, magnitude: 4.05, color: '#FFFFFF', constellation: 'Perseus' },
 
+    { id: "boo2", name: "Nekkar", ra: 225.486, dec: 40.391, magnitude: 3.50, color: '#FFFFFF', constellation: 'Boötes' },
+    { id: "boo3", name: "Seginus", ra: 217.957, dec: 38.308, magnitude: 3.03, color: '#FFFFFF', constellation: 'Boötes' },
+    { id: "boo4", name: "Izar", ra: 221.247, dec: 27.074, magnitude: 2.37, color: '#FFA500', constellation: 'Boötes' },
+    { id: "boo5", name: "Muphrid", ra: 209.670, dec: 18.397, magnitude: 2.68, color: '#FFFFFF', constellation: 'Boötes' },
+    { id: "boo6", name: "Rho Boötis", ra: 219.472, dec: 30.371, magnitude: 3.58, color: '#FFFFFF', constellation: 'Boötes' },
+    
+    // Adding stars for Auriga (to complete the Charioteer)
+    { id: "aur1", name: "Menkalinan", ra: 89.882, dec: 44.947, magnitude: 1.90, color: '#FFFFFF', constellation: 'Auriga' },
+    { id: "aur2", name: "Mahasim", ra: 84.411, dec: 37.212, magnitude: 2.99, color: '#FFFFFF', constellation: 'Auriga' },
+    { id: "aur3", name: "Elnath", ra: 81.573, dec: 28.607, magnitude: 1.65, color: '#B3E0FF', constellation: 'Auriga' },
+    { id: "aur4", name: "Iota Aurigae", ra: 74.248, dec: 33.166, magnitude: 2.69, color: '#FFFFFF', constellation: 'Auriga' },
+    
+    // Adding stars for Aquila (around Altair)
+    { id: "aql2", name: "Tarazed", ra: 296.565, dec: 10.613, magnitude: 2.72, color: '#FFA500', constellation: 'Aquila' },
+    { id: "aql3", name: "Alshain", ra: 298.828, dec: 6.407, magnitude: 3.71, color: '#FFFFFF', constellation: 'Aquila' },
+    { id: "aql4", name: "Delta Aquilae", ra: 292.680, dec: 3.115, magnitude: 3.36, color: '#FFFFFF', constellation: 'Aquila' },
+    { id: "aql5", name: "Lambda Aquilae", ra: 287.440, dec: -4.882, magnitude: 3.44, color: '#FFFFFF', constellation: 'Aquila' },
+    
+    // Adding stars for Taurus (around Aldebaran)
+    { id: "tau2", name: "Elnath", ra: 81.573, dec: 28.607, magnitude: 1.65, color: '#B3E0FF', constellation: 'Taurus' },
+    { id: "tau3", name: "Alcyone", ra: 56.871, dec: 24.105, magnitude: 2.87, color: '#B3E0FF', constellation: 'Taurus' },
+    { id: "tau4", name: "Atlas", ra: 56.871, dec: 24.053, magnitude: 3.63, color: '#FFFFFF', constellation: 'Taurus' },
+    { id: "tau5", name: "Ain", ra: 63.600, dec: 22.957, magnitude: 3.53, color: '#FFFFFF', constellation: 'Taurus' },
+
     
     // Other Bright Stars (unchanged)
     { id: "alp1", name: "Arcturus", ra: 213.915, dec: 19.182, magnitude: -0.05, color: '#FFA500', constellation: 'Boötes' },
@@ -111,11 +135,113 @@ export const sampleStarData = [
     { id: "cap1", name: "Capella", ra: 79.172, dec: 45.998, magnitude: 0.08, color: '#FFFF00', constellation: 'Auriga' },
     { id: "peg1", name: "Altair", ra: 297.696, dec: 8.868, magnitude: 0.77, color: '#FFFFFF', constellation: 'Aquila' },
     { id: "cen1", name: "Alpha Centauri", ra: 219.902, dec: -60.835, magnitude: -0.27, color: '#FFFF00', constellation: 'Centaurus' },
-    { id: "boo1", name: "Aldebaran", ra: 68.980, dec: 16.509, magnitude: 0.85, color: '#FFA500', constellation: 'Taurus' }
-    ];
+    { id: "boo1", name: "Aldebaran", ra: 68.980, dec: 16.509, magnitude: 0.85, color: '#FFA500', constellation: 'Taurus' },
+    
+     // Southern Cross (Crux) - Southern hemisphere's most famous constellation
+     { id: "cru1", name: "Acrux", ra: 186.650, dec: -63.099, magnitude: 0.77, color: '#B3E0FF', constellation: 'Crux' },
+     { id: "cru2", name: "Mimosa", ra: 191.930, dec: -59.689, magnitude: 1.25, color: '#B3E0FF', constellation: 'Crux' },
+     { id: "cru3", name: "Gacrux", ra: 187.791, dec: -57.113, magnitude: 1.63, color: '#FFA500', constellation: 'Crux' },
+     { id: "cru4", name: "Delta Crucis", ra: 189.291, dec: -58.749, magnitude: 2.79, color: '#B3E0FF', constellation: 'Crux' },
+     { id: "cru5", name: "Epsilon Crucis", ra: 188.417, dec: -60.401, magnitude: 3.59, color: '#FFFFFF', constellation: 'Crux' },
+ 
+     // Centaurus - Contains Alpha Centauri, nearest star system to Earth
+     { id: "cen2", name: "Hadar", ra: 210.956, dec: -60.373, magnitude: 0.61, color: '#B3E0FF', constellation: 'Centaurus' },
+     { id: "cen3", name: "Menkent", ra: 204.972, dec: -36.370, magnitude: 2.06, color: '#FFA500', constellation: 'Centaurus' },
+     { id: "cen4", name: "Theta Centauri", ra: 211.673, dec: -36.712, magnitude: 2.06, color: '#FFFFFF', constellation: 'Centaurus' },
+     { id: "cen5", name: "Epsilon Centauri", ra: 204.972, dec: -53.466, magnitude: 2.30, color: '#FFFFFF', constellation: 'Centaurus' },
+ 
+     // Phoenix - Deep southern constellation
+     { id: "phe1", name: "Ankaa", ra: 6.571, dec: -42.306, magnitude: 2.39, color: '#FFA500', constellation: 'Phoenix' },
+     { id: "phe2", name: "Beta Phoenicis", ra: 16.521, dec: -46.718, magnitude: 3.31, color: '#FFFFFF', constellation: 'Phoenix' },
+     { id: "phe3", name: "Gamma Phoenicis", ra: 23.799, dec: -43.318, magnitude: 3.41, color: '#FFFFFF', constellation: 'Phoenix' },
+     { id: "phe4", name: "Delta Phoenicis", ra: 4.376, dec: -49.072, magnitude: 3.93, color: '#FFFFFF', constellation: 'Phoenix' },
+ 
+     // Carina (Ship's Keel) - Contains Canopus, second brightest star in night sky
+     { id: "car1", name: "Canopus", ra: 95.987, dec: -52.695, magnitude: -0.74, color: '#FFFFFF', constellation: 'Carina' },
+     { id: "car2", name: "Miaplacidus", ra: 138.300, dec: -69.717, magnitude: 1.67, color: '#B3E0FF', constellation: 'Carina' },
+     { id: "car3", name: "Avior", ra: 125.628, dec: -59.509, magnitude: 1.86, color: '#FFA500', constellation: 'Carina' },
+     { id: "car4", name: "Aspidiske", ra: 139.272, dec: -59.275, magnitude: 2.25, color: '#FFFFFF', constellation: 'Carina' },
+     { id: "car5", name: "Theta Carinae", ra: 160.739, dec: -64.394, magnitude: 2.76, color: '#FFFFFF', constellation: 'Carina' },
+ 
+     // Pavo (Peacock) - Deep southern constellation
+     { id: "pav1", name: "Peacock", ra: 306.412, dec: -56.735, magnitude: 1.94, color: '#B3E0FF', constellation: 'Pavo' },
+     { id: "pav2", name: "Beta Pavonis", ra: 309.909, dec: -66.203, magnitude: 3.42, color: '#FFFFFF', constellation: 'Pavo' },
+     { id: "pav3", name: "Delta Pavonis", ra: 306.171, dec: -66.181, magnitude: 3.56, color: '#FFFF00', constellation: 'Pavo' },
+     { id: "pav4", name: "Eta Pavonis", ra: 292.176, dec: -64.724, magnitude: 3.62, color: '#FFFFFF', constellation: 'Pavo' },
+ 
+     // Octans - Contains the South Celestial Pole
+     { id: "oct1", name: "Nu Octantis", ra: 324.124, dec: -77.389, magnitude: 3.73, color: '#FFFFFF', constellation: 'Octans' },
+     { id: "oct2", name: "Beta Octantis", ra: 344.033, dec: -81.381, magnitude: 4.13, color: '#FFFFFF', constellation: 'Octans' },
+     { id: "oct3", name: "Delta Octantis", ra: 216.508, dec: -83.067, magnitude: 4.31, color: '#FFFFFF', constellation: 'Octans' },
+     { id: "oct4", name: "Sigma Octantis", ra: 319.324, dec: -88.957, magnitude: 5.47, color: '#FFFFFF', constellation: 'Octans' },// South Pole Star
 
+     { id: "hya1", name: "Alphard", ra: 141.897, dec: -8.658, magnitude: 1.98, color: '#FFA500', constellation: 'Hydra' },
+     { id: "hya2", name: "Gamma Hydrae", ra: 199.728, dec: -23.171, magnitude: 3.00, color: '#FFFFFF', constellation: 'Hydra' },
+     { id: "hya3", name: "Pi Hydrae", ra: 204.972, dec: -26.683, magnitude: 3.27, color: '#FFFFFF', constellation: 'Hydra' },
+     { id: "hya4", name: "Sigma Hydrae", ra: 206.885, dec: -3.391, magnitude: 4.44, color: '#FFFFFF', constellation: 'Hydra' },
+ 
+     // Adding Corona Borealis (fills gap between Boötes and Hercules)
+     { id: "crb1", name: "Alphecca", ra: 233.672, dec: 26.714, magnitude: 2.22, color: '#FFFFFF', constellation: 'Corona Borealis' },
+     { id: "crb2", name: "Nusakan", ra: 231.957, dec: 29.105, magnitude: 3.68, color: '#FFFFFF', constellation: 'Corona Borealis' },
+     { id: "crb3", name: "Theta CrB", ra: 236.114, dec: 31.359, magnitude: 4.14, color: '#FFFFFF', constellation: 'Corona Borealis' },
+ 
+     // Adding Corvus stars (fills southern spring sky gap)
+     { id: "crv1", name: "Gienah Corvi", ra: 182.103, dec: -17.542, magnitude: 2.59, color: '#B3E0FF', constellation: 'Corvus' },
+     { id: "crv2", name: "Kraz", ra: 188.597, dec: -23.397, magnitude: 2.65, color: '#FFFFFF', constellation: 'Corvus' },
+     { id: "crv3", name: "Algorab", ra: 186.265, dec: -16.516, magnitude: 2.94, color: '#FFFFFF', constellation: 'Corvus' },
+ 
+     // Adding Ophiuchus stars (fills gap between Scorpius and Hercules)
+     { id: "oph1", name: "Rasalhague", ra: 263.733, dec: 12.560, magnitude: 2.08, color: '#FFFFFF', constellation: 'Ophiuchus' },
+     { id: "oph2", name: "Cebalrai", ra: 265.868, dec: 4.567, magnitude: 2.76, color: '#FFFFFF', constellation: 'Ophiuchus' },
+     { id: "oph3", name: "Yed Prior", ra: 251.493, dec: -3.694, magnitude: 2.73, color: '#FFA500', constellation: 'Ophiuchus' },
+ 
+     // Adding Virgo stars (fills spring sky gap)
+     { id: "vir1", name: "Spica", ra: 201.298, dec: -11.161, magnitude: 0.98, color: '#B3E0FF', constellation: 'Virgo' },
+     { id: "vir2", name: "Vindemiatrix", ra: 195.544, dec: 10.959, magnitude: 2.85, color: '#FFFFFF', constellation: 'Virgo' },
+     { id: "vir3", name: "Porrima", ra: 190.415, dec: -1.449, magnitude: 2.74, color: '#FFFFFF', constellation: 'Virgo' },
+ 
+     // Adding Capricornus stars (fills gap in southern autumn sky)
+     { id: "cap1", name: "Deneb Algedi", ra: 326.760, dec: -16.127, magnitude: 2.85, color: '#FFFFFF', constellation: 'Capricornus' },
+     { id: "cap2", name: "Dabih", ra: 322.890, dec: -14.781, magnitude: 3.05, color: '#FFFFFF', constellation: 'Capricornus' },
+     { id: "cap3", name: "Nashira", ra: 325.023, dec: -16.662, magnitude: 3.68, color: '#FFFFFF', constellation: 'Capricornus' },
+ 
+     // Adding Piscis Austrinus (fills deep southern autumn sky)
+     { id: "psa1", name: "Fomalhaut", ra: 344.413, dec: -29.622, magnitude: 1.16, color: '#FFFFFF', constellation: 'Piscis Austrinus' },
+     { id: "psa2", name: "Epsilon PsA", ra: 341.633, dec: -27.044, magnitude: 4.17, color: '#FFFFFF', constellation: 'Piscis Austrinus' },
+     { id: "psa3", name: "Delta PsA", ra: 342.139, dec: -32.539, magnitude: 4.21, color: '#FFFFFF', constellation: 'Piscis Austrinus' },
+     { id: "and1", name: "Alpheratz", ra: 2.097, dec: 29.090, magnitude: 2.06, color: '#B3E0FF', constellation: 'Andromeda' },
+     { id: "and2", name: "Mirach", ra: 17.433, dec: 35.620, magnitude: 2.07, color: '#FFA500', constellation: 'Andromeda' },
+     { id: "and3", name: "Almach", ra: 30.975, dec: 42.329, magnitude: 2.10, color: '#FFA500', constellation: 'Andromeda' },
+     { id: "and4", name: "Delta And", ra: 9.832, dec: 30.861, magnitude: 3.27, color: '#FFFFFF', constellation: 'Andromeda' },
+ 
+     // Adding Pegasus stars (fills western autumn sky)
+     { id: "peg1", name: "Markab", ra: 345.944, dec: 15.205, magnitude: 2.49, color: '#B3E0FF', constellation: 'Pegasus' },
+     { id: "peg2", name: "Scheat", ra: 345.181, dec: 28.083, magnitude: 2.42, color: '#FFA500', constellation: 'Pegasus' },
+     { id: "peg3", name: "Algenib", ra: 3.308, dec: 15.183, magnitude: 2.83, color: '#B3E0FF', constellation: 'Pegasus' },
+     { id: "peg4", name: "Enif", ra: 326.046, dec: 9.875, magnitude: 2.39, color: '#FFA500', constellation: 'Pegasus' },
+ 
+     // Adding Cepheus stars (fills gap near celestial pole)
+     { id: "cep1", name: "Alderamin", ra: 319.644, dec: 62.585, magnitude: 2.45, color: '#FFFFFF', constellation: 'Cepheus' },
+     { id: "cep2", name: "Alfirk", ra: 322.164, dec: 70.561, magnitude: 3.23, color: '#B3E0FF', constellation: 'Cepheus' },
+     { id: "cep3", name: "Errai", ra: 354.837, dec: 77.632, magnitude: 3.21, color: '#FFFFFF', constellation: 'Cepheus' },
+ 
+     // Adding Hercules stars (fills summer sky gap)
+     { id: "her1", name: "Kornephoros", ra: 247.555, dec: 21.489, magnitude: 2.78, color: '#FFFFFF', constellation: 'Hercules' },
+     { id: "her2", name: "Rutilicus", ra: 236.067, dec: 18.141, magnitude: 3.16, color: '#FFFFFF', constellation: 'Hercules' },
+     { id: "her3", name: "Sarin", ra: 247.205, dec: 24.839, magnitude: 3.14, color: '#FFFFFF', constellation: 'Hercules' },
+ 
+     // Adding Libra stars (fills gap between Virgo and Scorpius)
+     { id: "lib1", name: "Zubenelgenubi", ra: 222.719, dec: -16.041, magnitude: 2.75, color: '#FFFFFF', constellation: 'Libra' },
+     { id: "lib2", name: "Zubeneschamali", ra: 231.957, dec: -9.382, magnitude: 2.61, color: '#B3E0FF', constellation: 'Libra' },
+     { id: "lib3", name: "Brachium", ra: 239.112, dec: -19.791, magnitude: 3.29, color: '#FFFFFF', constellation: 'Libra' },
+ 
+     // Adding Sagittarius stars (fills gap between Scorpius and Capricornus)
+     { id: "sgr1", name: "Kaus Australis", ra: 276.043, dec: -34.384, magnitude: 1.85, color: '#B3E0FF', constellation: 'Sagittarius' },
+     { id: "sgr2", name: "Nunki", ra: 283.816, dec: -26.296, magnitude: 2.05, color: '#B3E0FF', constellation: 'Sagittarius' },
+     { id: "sgr3", name: "Kaus Media", ra: 274.407, dec: -29.828, magnitude: 2.70, color: '#FFFFFF', constellation: 'Sagittarius' },
+     { id: "sgr4", name: "Kaus Borealis", ra: 272.010, dec: -25.421, magnitude: 2.81, color: '#FFFFFF', constellation: 'Sagittarius' }
 
-
+];
     export const planetData = [
     { 
         id: 'mercury', 
@@ -304,5 +430,274 @@ export const sampleStarData = [
             { star1: 'Delta Per', star2: 'Iota Per' },
             { star1: 'Mirfak', star2: 'Delta Per' }
         ]
+    },
+    
+    {
+        name: 'Crux',
+        lines: [
+            // Main cross pattern
+            { star1: 'Acrux', star2: 'Mimosa' },
+            { star1: 'Gacrux', star2: 'Delta Crucis' },
+            { star1: 'Delta Crucis', star2: 'Acrux' },
+            { star1: 'Epsilon Crucis', star2: 'Delta Crucis' }
+        ]
+    },
+    {
+        name: 'Centaurus',
+        lines: [
+            // Main figure around Alpha Centauri
+            { star1: 'Alpha Centauri', star2: 'Hadar' },
+            { star1: 'Hadar', star2: 'Epsilon Centauri' },
+            { star1: 'Epsilon Centauri', star2: 'Menkent' },
+            { star1: 'Menkent', star2: 'Theta Centauri' }
+        ]
+    },
+    {
+        name: 'Phoenix',
+        lines: [
+            // Main pattern
+            { star1: 'Ankaa', star2: 'Beta Phoenicis' },
+            { star1: 'Beta Phoenicis', star2: 'Gamma Phoenicis' },
+            { star1: 'Gamma Phoenicis', star2: 'Delta Phoenicis' },
+            { star1: 'Delta Phoenicis', star2: 'Ankaa' }
+        ]
+    },
+    {
+        name: 'Carina',
+        lines: [
+            // Main keel pattern
+            { star1: 'Canopus', star2: 'Avior' },
+            { star1: 'Avior', star2: 'Miaplacidus' },
+            { star1: 'Miaplacidus', star2: 'Aspidiske' },
+            { star1: 'Aspidiske', star2: 'Theta Carinae' }
+        ]
+    },
+    {
+        name: 'Pavo',
+        lines: [
+            // Peacock pattern
+            { star1: 'Peacock', star2: 'Beta Pavonis' },
+            { star1: 'Beta Pavonis', star2: 'Delta Pavonis' },
+            { star1: 'Delta Pavonis', star2: 'Eta Pavonis' },
+            { star1: 'Eta Pavonis', star2: 'Peacock' }
+        ]
+    },
+    {
+        name: 'Crux',
+        lines: [
+            // Main cross pattern
+            { star1: 'Acrux', star2: 'Mimosa' },
+            { star1: 'Gacrux', star2: 'Delta Crucis' },
+            { star1: 'Delta Crucis', star2: 'Acrux' },
+            { star1: 'Epsilon Crucis', star2: 'Delta Crucis' }
+        ]
+    },
+    {
+        name: 'Centaurus',
+        lines: [
+            // Main figure around Alpha Centauri
+            { star1: 'Alpha Centauri', star2: 'Hadar' },
+            { star1: 'Hadar', star2: 'Epsilon Centauri' },
+            { star1: 'Epsilon Centauri', star2: 'Menkent' },
+            { star1: 'Menkent', star2: 'Theta Centauri' }
+        ]
+    },
+    {
+        name: 'Phoenix',
+        lines: [
+            // Main pattern
+            { star1: 'Ankaa', star2: 'Beta Phoenicis' },
+            { star1: 'Beta Phoenicis', star2: 'Gamma Phoenicis' },
+            { star1: 'Gamma Phoenicis', star2: 'Delta Phoenicis' },
+            { star1: 'Delta Phoenicis', star2: 'Ankaa' }
+        ]
+    },
+    {
+        name: 'Carina',
+        lines: [
+            // Main keel pattern
+            { star1: 'Canopus', star2: 'Avior' },
+            { star1: 'Avior', star2: 'Miaplacidus' },
+            { star1: 'Miaplacidus', star2: 'Aspidiske' },
+            { star1: 'Aspidiske', star2: 'Theta Carinae' }
+        ]
+    },
+    {
+        name: 'Pavo',
+        lines: [
+            // Peacock pattern
+            { star1: 'Peacock', star2: 'Beta Pavonis' },
+            { star1: 'Beta Pavonis', star2: 'Delta Pavonis' },
+            { star1: 'Delta Pavonis', star2: 'Eta Pavonis' },
+            { star1: 'Eta Pavonis', star2: 'Peacock' }
+        ]
+    },
+    {
+        name: 'Octans',
+        lines: [
+            // Pattern around South Celestial Pole
+            { star1: 'Nu Octantis', star2: 'Beta Octantis' },
+            { star1: 'Beta Octantis', star2: 'Delta Octantis' },
+            { star1: 'Delta Octantis', star2: 'Sigma Octantis' },
+            { star1: 'Sigma Octantis', star2: 'Nu Octantis' }
+        ]
+    },
+    {
+        name: 'Octans',
+        lines: [
+            // Pattern around South Celestial Pole
+            { star1: 'Nu Octantis', star2: 'Beta Octantis' },
+            { star1: 'Beta Octantis', star2: 'Delta Octantis' },
+            { star1: 'Delta Octantis', star2: 'Sigma Octantis' },
+            { star1: 'Sigma Octantis', star2: 'Nu Octantis' }
+        ]
+    },
+    {
+        name: 'Boötes',
+        lines: [
+            { star1: 'Arcturus', star2: 'Nekkar' },
+            { star1: 'Nekkar', star2: 'Seginus' },
+            { star1: 'Seginus', star2: 'Izar' },
+            { star1: 'Izar', star2: 'Rho Boötis' },
+            { star1: 'Arcturus', star2: 'Muphrid' },
+            { star1: 'Muphrid', star2: 'Izar' }
+        ]
+    },
+    
+    // Adding Auriga constellation lines
+    {
+        name: 'Auriga',
+        lines: [
+            { star1: 'Capella', star2: 'Menkalinan' },
+            { star1: 'Menkalinan', star2: 'Mahasim' },
+            { star1: 'Mahasim', star2: 'Elnath' },
+            { star1: 'Elnath', star2: 'Iota Aurigae' },
+            { star1: 'Iota Aurigae', star2: 'Capella' }
+        ]
+    },
+    
+    // Adding Aquila constellation lines
+    {
+        name: 'Aquila',
+        lines: [
+            { star1: 'Altair', star2: 'Tarazed' },
+            { star1: 'Altair', star2: 'Alshain' },
+            { star1: 'Tarazed', star2: 'Delta Aquilae' },
+            { star1: 'Delta Aquilae', star2: 'Lambda Aquilae' }
+        ]
+    },
+    
+    // Adding Taurus constellation lines
+    {
+        name: 'Taurus',
+        lines: [
+            { star1: 'Aldebaran', star2: 'Elnath' },
+            { star1: 'Aldebaran', star2: 'Ain' },
+            { star1: 'Elnath', star2: 'Alcyone' },
+            { star1: 'Alcyone', star2: 'Atlas' }
+        ]
+    },
+
+    {
+        name: 'Hydra',
+        lines: [
+            { star1: 'Alphard', star2: 'Gamma Hydrae' },
+            { star1: 'Gamma Hydrae', star2: 'Pi Hydrae' },
+            { star1: 'Pi Hydrae', star2: 'Sigma Hydrae' }
+        ]
+    },
+    {
+        name: 'Corona Borealis',
+        lines: [
+            { star1: 'Alphecca', star2: 'Nusakan' },
+            { star1: 'Nusakan', star2: 'Theta CrB' }
+        ]
+    },
+    {
+        name: 'Corvus',
+        lines: [
+            { star1: 'Gienah Corvi', star2: 'Kraz' },
+            { star1: 'Gienah Corvi', star2: 'Algorab' },
+            { star1: 'Algorab', star2: 'Kraz' }
+        ]
+    },
+    {
+        name: 'Ophiuchus',
+        lines: [
+            { star1: 'Rasalhague', star2: 'Cebalrai' },
+            { star1: 'Cebalrai', star2: 'Yed Prior' }
+        ]
+    },
+    {
+        name: 'Virgo',
+        lines: [
+            { star1: 'Spica', star2: 'Porrima' },
+            { star1: 'Porrima', star2: 'Vindemiatrix' }
+        ]
+    },
+    {
+        name: 'Capricornus',
+        lines: [
+            { star1: 'Deneb Algedi', star2: 'Dabih' },
+            { star1: 'Deneb Algedi', star2: 'Nashira' }
+        ]
+    },
+    {
+        name: 'Piscis Austrinus',
+        lines: [
+            { star1: 'Fomalhaut', star2: 'Epsilon PsA' },
+            { star1: 'Epsilon PsA', star2: 'Delta PsA' }
+        ]
+    },
+    {
+        name: 'Andromeda',
+        lines: [
+            { star1: 'Alpheratz', star2: 'Mirach' },
+            { star1: 'Mirach', star2: 'Almach' },
+            { star1: 'Alpheratz', star2: 'Delta And' }
+        ]
+    },
+    {
+        name: 'Pegasus',
+        lines: [
+            { star1: 'Markab', star2: 'Scheat' },
+            { star1: 'Scheat', star2: 'Algenib' },
+            { star1: 'Algenib', star2: 'Markab' },
+            { star1: 'Markab', star2: 'Enif' }
+        ]
+    },
+    {
+        name: 'Cepheus',
+        lines: [
+            { star1: 'Alderamin', star2: 'Alfirk' },
+            { star1: 'Alfirk', star2: 'Errai' },
+            { star1: 'Errai', star2: 'Alderamin' }
+        ]
+    },
+    {
+        name: 'Hercules',
+        lines: [
+            { star1: 'Kornephoros', star2: 'Rutilicus' },
+            { star1: 'Rutilicus', star2: 'Sarin' },
+            { star1: 'Sarin', star2: 'Kornephoros' }
+        ]
+    },
+    {
+        name: 'Libra',
+        lines: [
+            { star1: 'Zubenelgenubi', star2: 'Zubeneschamali' },
+            { star1: 'Zubeneschamali', star2: 'Brachium' },
+            { star1: 'Brachium', star2: 'Zubenelgenubi' }
+        ]
+    },
+    {
+        name: 'Sagittarius',
+        lines: [
+            { star1: 'Kaus Australis', star2: 'Nunki' },
+            { star1: 'Kaus Australis', star2: 'Kaus Media' },
+            { star1: 'Kaus Media', star2: 'Kaus Borealis' },
+            { star1: 'Kaus Borealis', star2: 'Nunki' }
+        ]
     }
+
     ];

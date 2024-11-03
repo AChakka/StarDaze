@@ -4,6 +4,7 @@ import VideoBackground from './VideoBackground'
 import Typewriter from 'typewriter-effect';
 import LandingButton from './LandingButton';
 import Socials from './Socials';
+import LoginButton from './LoginButton';
 
 const Landing = () => {
   return (
@@ -25,6 +26,7 @@ const Landing = () => {
         </div>
         <Socials />
         <LandingButton />
+        <LoginButton />
       </div>
       <VideoBackground /> 
     </div>

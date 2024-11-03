@@ -2,10 +2,17 @@ import { useEffect, useState, useRef } from 'react';
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import './ParkMap.css';
+import VideoBackground from './VideoBackground';
+// import AirPollution from './components/Airpolution';
+// import LightPollution from './components/LightPolution';
+// import Weather from './components/Weather';
+// import UVData from './components/UVIndex';   
+
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiYWthY2hyb28iLCJhIjoiY20zMGd3ZmYzMG44azJsb2o0cHVtYmFzZyJ9.Cgs--oaX89DPQE_Xj7l9NA';
 
 function ParkMap() {
+
   const [userLocation, setUserLocation] = useState(null);
   const [parks, setParks] = useState([]);
   const [mapSize, setMapSize] = useState('500px');
@@ -16,7 +23,7 @@ function ParkMap() {
   const markersRef = useRef(new Map());
   const userMarkerRef = useRef(null);
 
-  // Get initial user location
+
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((position) => {
       const { latitude, longitude } = position.coords;
@@ -155,107 +162,109 @@ function ParkMap() {
       if (map) map.resize();
     }, 300);
   };*/
-
   return (
-        <div style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        minHeight: '100vh',
-        backgroundColor: '#121212',
-        flexDirection: 'column',
-        width:'100%',
-        padding: '0 16px' 
-        }}>
-        <div style={{
-            backgroundColor: '#121212',
-            color: '#e0e0e0',
-            padding: '16px',
-            maxWidth: '800px',
-            width: '200%',
-            flexGrow: 1,
+        <div className='background'>
+            <div style={{
             display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            minHeight: '100vh',
+            // backgroundColor: '#121212',
             flexDirection: 'column',
-            gap: '16px'
-        }}>
-            <h1 style={{ fontFamily: 'Exo 2, sans-serif', fontSize: '25px', fontWeight: 'bold', textAlign: 'center' }}>Parks within 50 Miles Radius</h1>
-            
-            <div style={{ display: 'flex', gap: '8px'}}>
-            <input
-                type="text"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                onKeyPress={(e) => e.key === 'Enter' && searchLocation()}
-                placeholder="Search for a location..."
-                style={{
-                flex: '1',
-                padding: '8px',
-                border: '1px solid #333',
-                borderRadius: '8px',
-                backgroundColor: '#1e1e1e',
+            width:'100%',
+            padding: '0 16px' 
+            }}>
+            <div style={{
+                // backgroundColor: '#121212',
                 color: '#e0e0e0',
-                fontFamily: 'Exo 2, sans-serif'
-                }}
-            />
-            <button
-                onClick={searchLocation}
-                disabled={loading}
-                style={{
-                padding: '12px 24px',
-                backgroundColor: loading ? '#444' : '#3b82f6',
-                color: '#fff',
-                borderRadius: '8px',
-                cursor: loading ? 'not-allowed' : 'pointer'
-                }}
-            >
-                {loading ? 'Searching...' : 'Search'}
-            </button>
-            </div>
-    
-            {/* Removed the toggle button for map size */}
-            
-            <div
-            ref={mapContainer}
-            style={{
-                width: '100%',
-                height: '500px', // Set a fixed height for the map
-                margin: '16px auto',
-                borderRadius: '8px',
-                overflow: 'hidden'
-            }}
-            />
-    
-            <div style={{ maxWidth: '500px', margin: '0 auto', width: '100%' }}>
-            <h2 style={{ fontSize: '20px', fontWeight: '600', marginBottom: '8px' }}>Nearby Parks</h2>
-            <div style={{ display: 'center', flexDirection: 'row', gap: '8px' }}>
-                {parks.map((park) => (
-                <div
-                    key={park.id}
+                padding: '16px',
+                maxWidth: '800px',
+                width: '200%',
+                flexGrow: 1,
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '16px'
+            }}>
+                <h1 style={{ fontFamily: 'Exo 2, sans-serif', fontSize: '25px', fontWeight: 'bold', textAlign: 'center' }}>Places to Stargaze in a 50 Miles Radius</h1>
+                
+                <div style={{ display: 'flex', gap: '8px'}}>
+                <input
+                    type="text"
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    onKeyPress={(e) => e.key === 'Enter' && searchLocation()}
+                    placeholder="Search for a location..."
                     style={{
-                    padding: '12px',
-                    backgroundColor: '#1e1e1e',
+                    flex: '1',
+                    padding: '8px',
+                    border: '1px solid #333',
                     borderRadius: '8px',
-                    cursor: 'pointer',
+                    backgroundColor: '#1e1e1e',
                     color: '#e0e0e0',
-                    border: '1px solid #333'
+                    fontFamily: 'Exo 2, sans-serif'
                     }}
-                    onClick={() => {
-                    if (map) {
-                        map.flyTo({
-                        center: park.coordinates,
-                        zoom: 15
-                        });
-                    }
-                    window.scrollTo({top: 0, behavior: 'smooth'});
+                />
+                <button
+                    onClick={searchLocation}
+                    disabled={loading}
+                    style={{
+                    padding: '12px 24px',
+                    backgroundColor: loading ? '#444' : '#3b82f6',
+                    color: '#fff',
+                    borderRadius: '8px',
+                    cursor: loading ? 'not-allowed' : 'pointer'
                     }}
                 >
-                    <h3 style={{ fontWeight: '600' }}>{park.name}</h3>
-                    <span style={{ fontSize: '14px', color: '#bbb' }}>{park.address}</span>
+                    {loading ? 'Searching...' : 'Search'}
+                </button>
                 </div>
-                ))}
+        
+                {/* Removed the toggle button for map size */}
+                
+                <div
+                ref={mapContainer}
+                style={{
+                    width: '100%',
+                    height: '500px', // Set a fixed height for the map
+                    margin: '16px auto',
+                    borderRadius: '8px',
+                    overflow: 'hidden'
+                }}
+                />
+        
+                <div style={{ maxWidth: '500px', margin: '0 auto', width: '100%' }}>
+                <h2 style={{ fontSize: '20px', fontWeight: '600', marginBottom: '8px' }}>Nearby Locations</h2>
+                <div style={{ display: 'center', flexDirection: 'row', gap: '8px' }}>
+                    {parks.map((park) => (
+                    <div
+                        key={park.id}
+                        style={{
+                        padding: '12px',
+                        backgroundColor: '#1e1e1e',
+                        borderRadius: '8px',
+                        cursor: 'pointer',
+                        color: '#e0e0e0',
+                        border: '1px solid #333'
+                        }}
+                        onClick={() => {
+                        if (map) {
+                            map.flyTo({
+                            center: park.coordinates,
+                            zoom: 15
+                            });
+                        }
+                        window.scrollTo({top: 0, behavior: 'smooth'});
+                        }}
+                    >
+                        <h3 style={{ fontWeight: '600' }}>{park.name}</h3>
+                        <span style={{ fontSize: '14px', color: '#bbb' }}>{park.address}</span>
+                    </div>
+                    ))}
+                </div>
+                </div>
             </div>
             </div>
-        </div>
+            <VideoBackground />
         </div>
   );
 }  

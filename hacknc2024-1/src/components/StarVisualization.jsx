@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import * as d3 from 'd3';
-import { sampleStarData, constellationLines, planetData  } from './StarData';
+import { sampleStarData, constellationLines, planetData } from './stardata';
+import ShootingBackground from './ShootingBackground';
 import ParkButton from './ParkButton';
 
 const StarVisualization = () => {
@@ -9,61 +10,29 @@ const StarVisualization = () => {
   const [selectedObject, setSelectedObject] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
   const [highlightedObjects, setHighlightedObjects] = useState([]);
-  const [userLocation, setUserLocation] = useState({ latitude: 40.7128, longitude: -74.0060 });
-  const [dimensions, setDimensions] = useState({ width: 800, height: 600 });
+  const dimensions = { width: 800, height: 600 };
   const [currentTime, setCurrentTime] = useState(Date.now());
   const [transform, setTransform] = useState({ x: 0, y: 0, scale: 1 });
+  const [showConstellationLabels, setShowConstellationLabels] = useState(false);
   const highlightTimeoutRef = useRef(null);
   const animationFrameRef = useRef(null);
 
   useEffect(() => {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          setUserLocation({
-            latitude: position.coords.latitude,
-            longitude: position.coords.longitude
-          });
-        },
-        (error) => {
-          console.error('Error getting location:', error);
-        }
-      );
-    }
-
-    const updateDimensions = () => {
-      const container = svgRef.current?.parentElement;
-      if (container) {
-        setDimensions({
-          width: container.clientWidth,
-          height: container.clientHeight
-        });
-      }
-    };
-
     const animate = () => {
       setCurrentTime(Date.now());
       animationFrameRef.current = requestAnimationFrame(animate);
     };
 
-    updateDimensions();
-    window.addEventListener('resize', updateDimensions);
     animationFrameRef.current = requestAnimationFrame(animate);
 
     return () => {
-      window.removeEventListener('resize', updateDimensions);
-      if (highlightTimeoutRef.current) {
-        clearTimeout(highlightTimeoutRef.current);
-      }
-      if (animationFrameRef.current) {
-        cancelAnimationFrame(animationFrameRef.current);
-      }
+      if (highlightTimeoutRef.current) clearTimeout(highlightTimeoutRef.current);
+      if (animationFrameRef.current) cancelAnimationFrame(animationFrameRef.current);
     };
   }, []);
 
   const calculateStarPositions = () => {
     const radius = Math.min(dimensions.width, dimensions.height) * 0.45;
-    
     const rotationX = (transform.y / dimensions.height) * Math.PI;
     const rotationY = (transform.x / dimensions.width) * Math.PI;
 
@@ -97,28 +66,6 @@ const StarVisualization = () => {
         visible,
         brightness,
         apparentSize: Math.max(2, (7 - star.magnitude) * Math.sqrt(brightness))
-      };
-    });
-  };
-
-  const calculatePlanetPositions = () => {
-    const elapsedDays = (currentTime - startTime.current) / (1000 * 60 * 60 * 24);
-    const centerX = dimensions.width / 2;
-    const centerY = dimensions.height / 2;
-    const baseRadius = Math.min(dimensions.width, dimensions.height) * 0.15;
-
-    return planetData.map(planet => {
-      const orbitalProgress = (elapsedDays / planet.orbitPeriod + planet.initialPhase / 360) % 1;
-      const angle = orbitalProgress * 2 * Math.PI;
-      const orbitRadiusScaled = baseRadius * planet.orbitRadius;
-      
-      return {
-        ...planet,
-        x: centerX + baseRadius * planet.orbitRadius * Math.cos(angle),
-        y: centerY + baseRadius * planet.orbitRadius * Math.sin(angle),
-        orbitRadiusScaled,
-        angle,
-        size: planet.size
       };
     });
   };
@@ -170,12 +117,10 @@ const StarVisualization = () => {
 
     const svg = d3.select(svgRef.current);
     const starPositions = calculateStarPositions();
-    const planetPositions = calculatePlanetPositions();
 
     svg.selectAll('*').remove();
 
     const defs = svg.append('defs');
-    //AI GENERATED
     const starGradient = defs.append('radialGradient')
       .attr('id', 'starGlow')
       .attr('cx', '50%')
@@ -191,15 +136,15 @@ const StarVisualization = () => {
       .attr('offset', '100%')
       .attr('stop-color', 'white')
       .attr('stop-opacity', 0);
-    //end
+
     svg.append('circle')
       .attr('cx', dimensions.width / 2)
       .attr('cy', dimensions.height / 2)
       .attr('r', Math.min(dimensions.width, dimensions.height) * 0.45)
-      .attr('fill', '#000')
+      .attr('fill', '#301934')
       .attr('stroke', '#2A4A73')
       .attr('stroke-width', 1)
-      .attr('opacity', 0.3);
+      .attr('opacity', 2);
     
     const linesGroup = svg.append('g')
       .attr('class', 'constellation-lines');
@@ -236,7 +181,30 @@ const StarVisualization = () => {
             .attr('opacity', isHighlighted ? brightness * 1.5 : brightness * 0.7);
         }
       });
-    }); 
+
+      if (showConstellationLabels) {
+        const stars = constellation.lines.flatMap(line => [
+          starPositions.find(s => s.name === line.star1),
+          starPositions.find(s => s.name === line.star2)
+        ]).filter(star => star && star.visible);
+
+        if (stars.length > 0) {
+          const centerX = d3.mean(stars, d => d.x);
+          const centerY = d3.mean(stars, d => d.y);
+          const avgBrightness = d3.mean(stars, d => d.brightness);
+
+          svg.append('text')
+            .attr('class', 'constellation-label')
+            .attr('x', centerX)
+            .attr('y', centerY)
+            .attr('fill', 'white')
+            .attr('opacity', avgBrightness * 0.8)
+            .attr('text-anchor', 'middle')
+            .attr('font-size', '12px')
+            .text(constellation.name);
+        }
+      }
+    });
 
     const sortedStars = starPositions
       .filter(star => star.visible)
@@ -247,13 +215,10 @@ const StarVisualization = () => {
         .attr('class', 'star-group')
         .attr('transform', `translate(${star.x}, ${star.y})`);
 
-      const isStarHighlighted = highlightedObjects.some(obj => 
-        obj.type === 'star' && obj.id === star.id
+      const isHighlighted = highlightedObjects.some(obj => 
+        (obj.type === 'star' && obj.id === star.id) ||
+        (obj.type === 'constellation' && obj.name === star.constellation)
       );
-      const isConstellationHighlighted = highlightedObjects.some(obj =>
-        obj.type === 'constellation' && obj.name === star.constellation
-      );
-      const isHighlighted = isStarHighlighted || isConstellationHighlighted;
 
       if (isHighlighted) {
         starGroup.append('circle')
@@ -306,10 +271,21 @@ const StarVisualization = () => {
 
     svg.call(drag);
 
-  }, [dimensions, userLocation, selectedObject, highlightedObjects, currentTime, transform]);
-//ai generated
+  }, [dimensions, selectedObject, highlightedObjects, currentTime, transform, showConstellationLabels]);
+
   return (
     <div className="star-visualization">
+      <div className="controls-container">
+        <label className="setting-item">
+          <input
+            type="checkbox"
+            checked={showConstellationLabels}
+            onChange={(e) => setShowConstellationLabels(e.target.checked)}
+          />
+          Show Constellation Labels
+        </label>
+      </div>
+
       <div className="search-container">
         <input
           type="text"
@@ -320,10 +296,6 @@ const StarVisualization = () => {
           onKeyPress={(e) => e.key === 'Enter' && handleSearch()}
         />
         <button className="search-button" onClick={handleSearch}>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" 
-              stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
           Search
         </button>
       </div>
@@ -343,12 +315,13 @@ const StarVisualization = () => {
         )}
         
         <div className="location-info">
-          Viewing from: {userLocation.latitude.toFixed(2)}°N, {userLocation.longitude.toFixed(2)}°E
+          Viewing from: 40.7128°N, -74.0060°E
         </div>
       </div>
       <ParkButton />
+      <ShootingBackground />
     </div>
   );
 };
-//end
+
 export default StarVisualization;

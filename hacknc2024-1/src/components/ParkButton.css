@@ -40,6 +40,14 @@
     display: block;
   }
 
+  /* Our own Css */
+  .galaxy-button {
+    position: absolute;
+    transform: translate(70%, -80%);
+  }
+  /* End of own css */
+
+
   .galaxy::before {
     content: "";
     position: absolute;
@@ -113,7 +121,7 @@
         calc(100px - (var(--active) * 100px)) 0 / 100% 100% no-repeat,
       hsl(0 calc(var(--active) * 100%) calc(12% - (var(--active) * 8%))); /* Changed hue to 0 for red */
     background: var(--bg);
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-weight: 500;
     border: 0;
     cursor: pointer;

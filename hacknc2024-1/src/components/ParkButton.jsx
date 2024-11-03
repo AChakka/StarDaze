@@ -11,13 +11,13 @@ const ParkButton = () => {
 
   return (
     <div className="galaxy-button">
-  <button className="space-button" onClick={handleClick}>
-    <span className="backdrop"></span>
-    <span className="galaxy"></span>
-    <label className="text">Space</label>
-  </button>
-  <div class="bodydrop"></div>
-</div>
+        <button className="space-button" onClick={handleClick}>
+        <span className="backdrop"></span>
+        <span className="galaxy"></span>
+        <label className="text">Discover Stargazing Locations!</label>
+        </button>
+        <div class="bodydrop"></div>
+    </div>
 
   )
 }

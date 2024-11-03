@@ -1,4 +1,4 @@
-  
+
   .logo {
     height: 6em;
     padding: 1.5em;
@@ -40,7 +40,7 @@
     border-radius: 8px;
   }
 
-  body, .park-map-container {
+  .body, .park-map-container {
     font-family: 'Exo 2', sans-serif;
   }
   
