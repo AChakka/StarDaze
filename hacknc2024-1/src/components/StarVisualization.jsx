@@ -272,7 +272,7 @@ const StarVisualization = () => {
     svg.call(drag);
 
   }, [dimensions, selectedObject, highlightedObjects, currentTime, transform, showConstellationLabels]);
-
+//Used AI to do this
   return (
     <div className="star-visualization">
       <div className="controls-container">
@@ -290,7 +290,7 @@ const StarVisualization = () => {
         <input
           type="text"
           className="search-input"
-          placeholder="Search for stars or constellations..."
+          placeholder="Stars or constellations..."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
           onKeyPress={(e) => e.key === 'Enter' && handleSearch()}
@@ -323,5 +323,5 @@ const StarVisualization = () => {
     </div>
   );
 };
-
+//end of ai 
 export default StarVisualization;
