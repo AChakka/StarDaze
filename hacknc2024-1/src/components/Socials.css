@@ -1,0 +1,39 @@
+.instagramSvg {
+    width:60px;
+    height:60px;
+    fill:white;
+
+    position:absolute;
+    left: 2vw;
+    top: 5vh;
+}
+
+.xSvg {
+    width:60px;
+    height:60px;
+    fill:white;
+
+    position:absolute;
+    left: 7vw;
+    top: 5vh;
+}
+
+.linkSvg {
+    width:60px;
+    height:60px;
+    fill:white;
+    
+    position:absolute;
+    left: 11.5vw;
+    top: 5vh;
+}
+
+.discordSvg {
+    width:60px;
+    height:60px;
+    fill: white;
+    
+    position:absolute;
+    left: 16vw;
+    top: 5vh;
+}

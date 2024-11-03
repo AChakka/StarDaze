@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title {
+    /*Formatting*/
+    font-size: 8rem !important;
+    margin: 10px 0 30px 0;
+    text-align: center;
+    font-weight: 800;
+    width: 100%; 
+    line-height: 1.3; 
+    letter-spacing: 2px;
+    padding: 0 20px; 
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-transform:none;
+
+    /*Font Family*/
+    font-family: "Exo 2", sans-serif;
+    font-weight: 350;
+    font-style: normal;
+
+}
+
+.glow {
+    /*Font Family*/
+    font-family: "Space Mono", monospace;
+    font-weight: 700;
+    font-style: normal;
+    
+    /*Happy Little Accidents - Bob Ross has NEVER LIED*/
+    color: #fff200;
+    color: #f0e511;
+    animation: glow 1.8s ease-in-out infinite alternate;
+    
+}
+
+/*Glow Affect*/
+@keyframes glow {
+    from {
+        text-shadow: 0 0 8px #9a8e0f;
+    }
+    to {
+        text-shadow: 0 0 36px #f6f6f6;
+    }
+}
+
+.typewriter {
+    font-size: 2.5rem;
+    display: block;
+    margin-top: 1rem;
+    font-family: "Space Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+}

@@ -1,0 +1,18 @@
+.redirect-button {
+  padding: 10px 50px;
+  font-size: 2rem;
+  color: white;
+  background-color: #44089799;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 40px;
+  font-family: "Space Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.redirect-button:hover {
+  background-color: #1e076b;
+}
