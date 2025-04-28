@@ -1,6 +1,7 @@
-# HackNc2024
+# StarDaze
 This is a Stargazing website where users can go on the website to figure out what the best places to see significant star constellations around the world and which ones are visible within the 50 mile radius.
 
+**Video Demo**: https://www.youtube.com/watch?v=yHRUgWoty20
 
 This is the link to our devpost where more information can be found such as a video demo and descriptions of what each of us contributed.
 https://devpost.com/software/stardaze
